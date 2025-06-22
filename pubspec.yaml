@@ -3,17 +3,17 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"  # ✅ Updated to support Dart 3.x (null safety)
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  carousel_slider: 3.0.0
-  dio: 4.0.0
-  path_provider: 2.0.1
-  shared_preferences: 2.0.5
-  provider: 5.0.0
+  cupertino_icons: ^1.0.2               # ✅ Updated to null-safe version
+  carousel_slider: ^4.2.1               # ✅ Compatible version with null safety
+  dio: ^5.3.2                           # ✅ Latest null-safe version
+  path_provider: ^2.1.2
+  shared_preferences: ^2.2.2
+  provider: ^6.1.2                      # ✅ Latest provider with null safety
 
 dev_dependencies:
   flutter_test:
