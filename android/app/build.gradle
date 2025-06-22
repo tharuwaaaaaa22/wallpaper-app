@@ -6,11 +6,6 @@ if (localPropertiesFile.exists()) {
     }
 }
 
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
-}
-
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
     flutterVersionCode = '1'
@@ -23,11 +18,12 @@ if (flutterVersionName == null) {
 
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android' // Optional if you're using Kotlin (safe to keep)
+    id 'org.jetbrains.kotlin.android' // ✅ Optional but safe to include
     id 'dev.flutter.flutter-gradle-plugin'
 }
 
 android {
+    namespace "com.example.wallpapers" // ✅ REQUIRED for Flutter 3.16+
     compileSdkVersion 33
 
     defaultConfig {
@@ -57,7 +53,7 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0" // safe even without plugin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
