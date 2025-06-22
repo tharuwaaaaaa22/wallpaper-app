@@ -21,8 +21,11 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-apply plugin: 'com.android.application'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android' // Optional if you're using Kotlin (safe to keep)
+    id 'dev.flutter.flutter-gradle-plugin'
+}
 
 android {
     compileSdkVersion 33
