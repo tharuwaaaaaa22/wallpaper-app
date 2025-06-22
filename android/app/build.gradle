@@ -22,19 +22,18 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android' // ✅ Added if Kotlin needed later
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 33 // ✅ Updated to latest stable
+    compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.example.wallpapers" // ✅ Matches your package
-        minSdkVersion 19                     // ✅ Minimum for Play Store and plugins
-        targetSdkVersion 33                  // ✅ Latest supported
+        applicationId "com.example.wallpapers"
+        minSdkVersion 19
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true                 // ✅ Good for large apps
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -55,7 +54,7 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0" // ✅ Optional, safe for V2
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0" // safe even without plugin
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
